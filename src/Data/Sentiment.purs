@@ -8,7 +8,6 @@ import Data.Show.Generic (genericShow)
 data Sentiment a = Ask a | Bid a
 
 instance functorSentiment :: Functor Sentiment where
-  map :: forall a b. (a -> b) -> Sentiment a -> Sentiment b
   map f (Ask a) = Ask (f a)
   map f (Bid a) = Bid (f a)
 

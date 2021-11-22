@@ -9,7 +9,7 @@ import Effect.Console (log)
 import Ig (setupIg)
 
 
-
+-- TODO read a config file with login details
 main :: Effect Unit
 main = launchAff_ do
   liftEffect $ log "Startar main"

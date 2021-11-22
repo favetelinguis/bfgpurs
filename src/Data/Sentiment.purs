@@ -5,7 +5,9 @@ import Data.Generic.Rep (class Generic)
 import Data.Show (class Show)
 import Data.Show.Generic (genericShow)
 
-data Sentiment a = Ask a | Bid a -- Posetiv (I will buy placing bid and get filled at best ask) | Negative (I will sell placing ask and getting filled a best bid) | Neutral
+data Sentiment a
+  = Ask a
+  | Bid a -- Posetiv (I will buy placing bid and get filled at best ask) | Negative (I will sell placing ask and getting filled a best bid) | Neutral
 
 instance functorSentiment :: Functor Sentiment where
   map f (Ask a) = Ask (f a)

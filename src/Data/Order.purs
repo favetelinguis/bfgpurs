@@ -10,15 +10,15 @@ new :: Order
 new = {type: Market, level: 0.0}
 
 -- TODO Should i have Monoid for order to get an empty order
-openOrder :: Number -> Order
-openOrder l = limitOrder <<< setLevel l
+openLimitOrder :: Number -> Order
+openLimitOrder = limitOrder <<< (flip setLevel $ new)
 
--- TODO can lenses help with this?
 limitOrder :: Order -> Order
 limitOrder = _ {type = Limit}
 
+-- TODO can lenses help with this?
 setLevel :: Number -> Order -> Order
-setLevel l = _ {level = l}
+setLevel l  = _ {level = l}
 
 {-
 import Bar (Price(Ask, Bid))

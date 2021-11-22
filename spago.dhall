@@ -20,16 +20,14 @@ to generate this file without the comments in this block.
   , "control"
   , "effect"
   , "exceptions"
+  , "functions"
+  , "lists"
   , "maybe"
+  , "ordered-collections"
   , "prelude"
   , "psci-support"
-  , "react-basic"
-  , "react-basic-dom"
-  , "react-basic-hooks"
   , "refs"
-  , "validation"
-  , "web-dom"
-  , "web-html"
+  , "st"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]

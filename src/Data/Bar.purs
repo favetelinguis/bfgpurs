@@ -50,8 +50,18 @@ bar :: Sentiment Bar
 price :: Sentiment Price
 I can now map over sentiment to use functions from bar and price but still be in a specific sentiment context
 -}
-type Bar = {open :: Number, high :: Number, low :: Number, close :: Number}
+type BarRow r = 
+  (open :: Number, high:: Number, low :: Number, close :: Number | r)
+
+-- Example composing row types
+type DecisionRow r = 
+  (a :: Int, b :: String | r)
+newtype WorldState = WorldState { | BarRow (DecisionRow ())}
+
 --data Bar = AskBar BarContent | BidBar BarContent
+
+exampleDestructureBar :: { | BarRow ()} -> Int
+exampleDestructureBar { open, high, low, close } = 4
 
 {-
 getHigh :: AskBar -> Ask

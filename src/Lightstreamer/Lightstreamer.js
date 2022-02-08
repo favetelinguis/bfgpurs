@@ -1,5 +1,6 @@
 "use strict";
-const {LightstreamerClient, Subscription} = require("lightstreamer-client-web/lightstreamer.common");
+const {LightstreamerClient, Subscription} = require("lightstreamer-client-node");
+const {runner} = require("jsproject/index")
 
 exports.newImpl = function (url, usr, pwd, listner) {
     var client = new LightstreamerClient(url)
@@ -29,4 +30,11 @@ exports.addSubscriptionImpl = function (client, subscription) {
 
 exports.removeSubscriptionImpl = function (client, subscription) {
     client.unsubscribe(subscription);
+}
+
+exports.runnerImpl = function (arg) {
+    return function no() {
+        console.log("This should show " + arg);
+    }
+    //return runner;
 }

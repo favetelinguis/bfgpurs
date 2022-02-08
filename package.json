@@ -14,6 +14,7 @@
     "spago": "^0.20.3"
   },
   "dependencies": {
-    "lightstreamer-client-web": "^8.0.3"
+    "lightstreamer-client-node": "^8.0.3",
+    "jsproject": "file:./jsproject"
   }
 }

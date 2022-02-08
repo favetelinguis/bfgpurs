@@ -1,4 +1,4 @@
-module Lightstreamer (Subscription, LightstreamerClient, newSubscription, addSubscription, removeSubscription, connect, disconnect, newClient) where
+module Lightstreamer (Subscription, LightstreamerClient, newSubscription, addSubscription, removeSubscription, connect, disconnect, newClient, runner) where
 
 import Prelude
 
@@ -80,6 +80,11 @@ foreign import removeSubscriptionImpl :: Fn2 LightstreamerClient Subscription (E
 
 removeSubscription :: LightstreamerClient -> Subscription -> Effect Unit
 removeSubscription c s = runFn2 removeSubscriptionImpl c s
+
+
+foreign import runnerImpl:: String -> Effect Unit
+runner :: String -> Effect Unit
+runner = runnerImpl
 
 {- One way to handle mutable object?
 foreign import new :: a -> Ref a

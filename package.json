@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "spago build --watch --before clear"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "purescript": "^0.14.5",
     "purty": "^7.0.0",
-    "spago": "^0.20.3"
+    "spago": "^0.20.5"
   },
   "dependencies": {
     "lightstreamer-client-node": "^8.0.3",

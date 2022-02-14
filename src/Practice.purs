@@ -3,7 +3,7 @@ module Practice where
   import Prelude
   import Effect (Effect)
 
-  import Parser as Ch
+  import Ch19 as Ch
   
   main :: Effect Unit
   main = Ch.test

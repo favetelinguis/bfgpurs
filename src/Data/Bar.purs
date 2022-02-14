@@ -5,6 +5,7 @@ import Data.Generic.Rep (class Generic)
 import Data.Show (class Show)
 import Data.Show.Generic (genericShow)
 import Prelude (show)
+import Data.Sentiment (Sentiment)
 
 -- Bid Ask
 -- AskBar BidBar BidOpen BidHigh BidLow BidClose AskOpen AskHigh AskLow AskClose
@@ -50,8 +51,15 @@ bar :: Sentiment Bar
 price :: Sentiment Price
 I can now map over sentiment to use functions from bar and price but still be in a specific sentiment context
 -}
+
+newtype Open = Open Number
+newtype High = High Number
+newtype Low = Low Number
+newtype Close = Close Number
+
+        
 type BarRow r = 
-  (open :: Number, high:: Number, low :: Number, close :: Number | r)
+        (open :: Open, high:: High, low :: Low, close :: Close, time :: Int, sentiment :: Sentiment | r)
 
 -- Example composing row types
 type DecisionRow r = 

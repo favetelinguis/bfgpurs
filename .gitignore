@@ -11,3 +11,4 @@
 /dist
 /.parcel-cache
 /src/Junk.purs
+config.json

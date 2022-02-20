@@ -12,7 +12,7 @@
   "devDependencies": {
     "purescript": "^0.14.5",
     "purty": "^7.0.0",
-    "spago": "^0.20.5"
+    "spago": "^0.20.7"
   },
   "dependencies": {
     "lightstreamer-client-node": "^8.0.3",

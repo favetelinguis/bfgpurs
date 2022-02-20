@@ -7,6 +7,8 @@ import Effect.Console (log)
 import Data.Generic.Rep (class Generic)
 import Data.Show.Generic (genericShow)
 
+a = 1
+
 test :: Effect Unit
 test = do 
         log $ show $ Just (_ * 10) <*> Just 20
